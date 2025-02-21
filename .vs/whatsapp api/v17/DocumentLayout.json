@@ -1,0 +1,163 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DD7C85-F1B8-48EE-B4E1-2D661E680F63}|whatsapp.Infastructure\\whatsapp.Infastructure.csproj|c:\\users\\hp\\desktop\\source\\repos\\whatsapp api\\whatsapp.infastructure\\services\\groupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0DD7C85-F1B8-48EE-B4E1-2D661E680F63}|whatsapp.Infastructure\\whatsapp.Infastructure.csproj|solutionrelative:whatsapp.infastructure\\services\\groupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38155D4B-0759-428A-A394-31DED08A51D2}|whatsapp api\\whatsapp api.csproj|c:\\users\\hp\\desktop\\source\\repos\\whatsapp api\\whatsapp api\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38155D4B-0759-428A-A394-31DED08A51D2}|whatsapp api\\whatsapp api.csproj|solutionrelative:whatsapp api\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38020EB9-74BA-4F87-9ECD-2C6DC457195D}|whatsapp.Domain\\whatsapp.Domain.csproj|c:\\users\\hp\\desktop\\source\\repos\\whatsapp api\\whatsapp.domain\\servicecontract\\igroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38020EB9-74BA-4F87-9ECD-2C6DC457195D}|whatsapp.Domain\\whatsapp.Domain.csproj|solutionrelative:whatsapp.domain\\servicecontract\\igroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38020EB9-74BA-4F87-9ECD-2C6DC457195D}|whatsapp.Domain\\whatsapp.Domain.csproj|c:\\users\\hp\\desktop\\source\\repos\\whatsapp api\\whatsapp.domain\\dtos\\addmembersjsonresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38020EB9-74BA-4F87-9ECD-2C6DC457195D}|whatsapp.Domain\\whatsapp.Domain.csproj|solutionrelative:whatsapp.domain\\dtos\\addmembersjsonresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38020EB9-74BA-4F87-9ECD-2C6DC457195D}|whatsapp.Domain\\whatsapp.Domain.csproj|c:\\users\\hp\\desktop\\source\\repos\\whatsapp api\\whatsapp.domain\\entities\\grouprequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38020EB9-74BA-4F87-9ECD-2C6DC457195D}|whatsapp.Domain\\whatsapp.Domain.csproj|solutionrelative:whatsapp.domain\\entities\\grouprequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E5ACA0B-3E3D-40B7-803A-B39F7732055E}|whatsapp.Application\\whatsapp.Application.csproj|c:\\users\\hp\\desktop\\source\\repos\\whatsapp api\\whatsapp.application\\services\\getphonenumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E5ACA0B-3E3D-40B7-803A-B39F7732055E}|whatsapp.Application\\whatsapp.Application.csproj|solutionrelative:whatsapp.application\\services\\getphonenumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38155D4B-0759-428A-A394-31DED08A51D2}|whatsapp api\\whatsapp api.csproj|c:\\users\\hp\\desktop\\source\\repos\\whatsapp api\\whatsapp api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38155D4B-0759-428A-A394-31DED08A51D2}|whatsapp api\\whatsapp api.csproj|solutionrelative:whatsapp api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 68,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddMembersJsonResponse.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Domain\\DTOs\\AddMembersJsonResponse.cs",
+              "RelativeDocumentMoniker": "whatsapp.Domain\\DTOs\\AddMembersJsonResponse.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Domain\\DTOs\\AddMembersJsonResponse.cs",
+              "RelativeToolTip": "whatsapp.Domain\\DTOs\\AddMembersJsonResponse.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA+wCUAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T13:09:48.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GroupService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Infastructure\\Services\\GroupService.cs",
+              "RelativeDocumentMoniker": "whatsapp.Infastructure\\Services\\GroupService.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Infastructure\\Services\\GroupService.cs",
+              "RelativeToolTip": "whatsapp.Infastructure\\Services\\GroupService.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAUwKAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T14:07:12.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GroupController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp api\\Controllers\\GroupController.cs",
+              "RelativeDocumentMoniker": "whatsapp api\\Controllers\\GroupController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp api\\Controllers\\GroupController.cs",
+              "RelativeToolTip": "whatsapp api\\Controllers\\GroupController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAA/wCMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T14:06:01.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp api\\Program.cs",
+              "RelativeDocumentMoniker": "whatsapp api\\Program.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp api\\Program.cs",
+              "RelativeToolTip": "whatsapp api\\Program.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAkwDcAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T13:35:26.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetPhoneNumService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Application\\Services\\GetPhoneNumService.cs",
+              "RelativeDocumentMoniker": "whatsapp.Application\\Services\\GetPhoneNumService.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Application\\Services\\GetPhoneNumService.cs",
+              "RelativeToolTip": "whatsapp.Application\\Services\\GetPhoneNumService.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAUwCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T21:45:25.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GroupRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Domain\\Entities\\GroupRequestModel.cs",
+              "RelativeDocumentMoniker": "whatsapp.Domain\\Entities\\GroupRequestModel.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Domain\\Entities\\GroupRequestModel.cs",
+              "RelativeToolTip": "whatsapp.Domain\\Entities\\GroupRequestModel.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAYwBAAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T20:43:09.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IGroupService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Domain\\ServiceContract\\IGroupService.cs",
+              "RelativeDocumentMoniker": "whatsapp.Domain\\ServiceContract\\IGroupService.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\source\\repos\\whatsapp api\\whatsapp.Domain\\ServiceContract\\IGroupService.cs",
+              "RelativeToolTip": "whatsapp.Domain\\ServiceContract\\IGroupService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T01:49:51.602Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
