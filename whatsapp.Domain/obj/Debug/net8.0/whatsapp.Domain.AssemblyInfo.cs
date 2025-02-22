@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("whatsapp.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42a8ffc2ce99cbbc0fbc452e33243c57bbe20f7f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2109a92950ba094cef3476b21ab5ab3477fe0e69")]
 [assembly: System.Reflection.AssemblyProductAttribute("whatsapp.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("whatsapp.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -192,3 +192,4 @@ C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp api\bin\Debug\net8.0\RBus
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp api\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp api\bin\Debug\net8.0\System.IO.Packaging.dll
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp api\obj\Debug\net8.0\whatsapp api.sourcelink.json

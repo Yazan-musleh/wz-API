@@ -31,18 +31,18 @@ namespace whatsapp_api.Controllers
             if (file == null || file.Length == 0)
                 return BadRequest("No file uploaded.");
 
-            //try
-            //{
+            try
+            {
                 var result = await _groupService.AddUsersToGroup(groupId, file);
                 Console.WriteLine(result);
                 return File(result.ToArray(),
                     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "WhatsAppUserData.xlsx");
 
-            //}
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, $"Error processing file: {ex.Message}");
-        //    }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error processing file: {ex.Message}");
+            }
         }
 
             
@@ -56,7 +56,8 @@ namespace whatsapp_api.Controllers
             {
                 var result = await _groupService.CreateGroup(groupName, file);
                 Console.WriteLine(result);
-                return Ok(result);
+                return File(result.ToArray(),
+                    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "WhatsAppUserData.xlsx");
             }
             catch (Exception ex)
             {

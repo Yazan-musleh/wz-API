@@ -122,11 +122,12 @@ namespace whatsapp.Application.Services
             return await ExportExcelSheet(exportResponses);
         }
 
-        public async Task<List<string>> CreateGroup(string groupName, IFormFile file)
+        public async Task<MemoryStream> CreateGroup(string groupName, IFormFile file)
         {
 
             List<string> responses = new List<string>();
-           
+            List<ExportAddMembersResultToExcelDto> exportResponses = new List<ExportAddMembersResultToExcelDto>();
+
 
             List<string> contacts = await ExtractPhoneNumbers(file);
 
@@ -141,13 +142,28 @@ namespace whatsapp.Application.Services
                 groupName = groupName
             };
             request.AddJsonBody(requestBody);
-            var response = await client.PostAsync(request);
+            var restResponse = await client.PostAsync(request);
 
-            responses.Add(response.Content);
+            responses.Add(restResponse.Content);
 
+            foreach (var json in responses)
+            {
+                var response = JsonConvert.DeserializeObject<AddMembersJsonResponse>(json);
 
-            Console.WriteLine("{0}", response.Content);
-            return responses;
+                foreach (var entry in response.Data.Data.Participants)
+                {
+                    string phoneNumber = entry.Key.Replace("@c.us", "");
+                    int code = entry.Value.Code;
+                    string message = entry.Value.Message;
+
+                    exportResponses.Add(new ExportAddMembersResultToExcelDto { PhoneNumber = phoneNumber, Message = message, Code = code });
+
+                    Console.WriteLine($"Phone: {phoneNumber}, Code: {code}, Message: {message}");
+                }
+            }
+
+            Console.WriteLine("{0}", restResponse.Content);
+            return await ExportExcelSheet(exportResponses);
         }
 
         private async Task<MemoryStream> ExportExcelSheet(List<ExportAddMembersResultToExcelDto> dtos)

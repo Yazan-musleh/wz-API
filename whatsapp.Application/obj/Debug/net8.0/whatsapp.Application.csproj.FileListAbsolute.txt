@@ -15,3 +15,4 @@ C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Application\obj\Debug\net
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Application\obj\Debug\net8.0\whatsapp.DD424CDF.Up2Date
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Application\bin\Debug\net8.0\whatsapp.Infastructure.dll
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Application\bin\Debug\net8.0\whatsapp.Infastructure.pdb
+C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Application\obj\Debug\net8.0\whatsapp.Application.sourcelink.json

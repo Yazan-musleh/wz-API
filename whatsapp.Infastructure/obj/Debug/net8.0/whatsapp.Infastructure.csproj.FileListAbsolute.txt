@@ -15,3 +15,4 @@ C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Infastructure\obj\Debug\n
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Infastructure\obj\Debug\net8.0\whatsapp.Infastructure.pdb
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Infastructure\obj\Debug\net8.0\whatsapp.Infastructure.genruntimeconfig.cache
 C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Infastructure\obj\Debug\net8.0\ref\whatsapp.Infastructure.dll
+C:\Users\hp\Desktop\source\repos\whatsapp api\whatsapp.Infastructure\obj\Debug\net8.0\whatsapp.Infastructure.sourcelink.json

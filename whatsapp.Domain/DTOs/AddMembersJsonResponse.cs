@@ -22,6 +22,7 @@ namespace whatsapp.Domain.DTOs
     public class DataResult
     {
         public Dictionary<string, UserResult> Result { get; set; }
+        public Dictionary<string, UserResult> Participants { get; set; }
     }
 
     public class UserResult
@@ -36,6 +37,8 @@ namespace whatsapp.Domain.DTOs
         public string PhoneNumber { get; set; }
         public string Message { get; set; }
         public int Code { get; set; }
+        public int StatusCode { get; set; }
+
     }
 
 }
