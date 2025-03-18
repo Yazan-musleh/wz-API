@@ -27,7 +27,7 @@ namespace whatsapp.Domain.DTOs
 
     public class UserResult
     {
-        public int Code { get; set; }
+        public int StatusCode { get; set; }
         public string Message { get; set; }
         public bool IsInviteV4Sent { get; set; }
     }

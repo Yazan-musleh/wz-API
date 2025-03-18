@@ -6,6 +6,7 @@ namespace whatsapp.Domain.ServiceContract
     public interface IGroupService
     {
         public Task<List<GroupInfoResponseDto>> GetGroups();
+        public Task<MemoryStream> GetGroupMembers(string groupId);
         public Task<MemoryStream> AddUsersToGroup(string groupId, IFormFile file);
         public Task<MemoryStream> CreateGroup(string groupId, IFormFile file);
     }

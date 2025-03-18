@@ -1,4 +1,6 @@
 ﻿using Azure;
+using ClosedXML.Excel;
+using Microsoft.AspNetCore.Http;
 using RestSharp;
 using System.Text.Json;
 using whatsapp.Domain.Entities;
@@ -18,13 +20,14 @@ namespace whatsapp.Application.Services
             _repo = repo;
         }
 
-        public async Task<string> SendBulkMediaMessages(List<string> contacts, string mediaUrl, string message)
+        public async Task<string> SendBulkMediaMessages(IFormFile contactsFile, string mediaUrl, string message)
         {
 
             RestResponse response = null;
 
+            var phoneNumbers = await ExtractPhoneNumbers(contactsFile);
 
-            var tasks = contacts.Select(async contacts =>
+            var tasks = phoneNumbers.Select(async contacts =>
             {
 
             var options = new RestClientOptions("https://waapi.app/api/v1/instances/41849/client/action/send-media");
@@ -53,12 +56,14 @@ namespace whatsapp.Application.Services
             return "";
         }
 
-        public async Task<string> SendBulkMessages(List<string> contacts, string message)
+        public async Task<string> SendBulkMessages(IFormFile contactsFile, string message)
         {
 
             var options = new RestClientOptions("https://waapi.app/api/v1/instances/41849/client/action/send-message");
 
-            var tasks = contacts.Select(async contacts =>
+            var phoneNumbers = await ExtractPhoneNumbers(contactsFile);
+
+            var tasks = phoneNumbers.Select(async contacts =>
             {
                 var client = new RestClient(options);
                 var request = new RestRequest("");
@@ -76,6 +81,39 @@ namespace whatsapp.Application.Services
 
             return "";
 
+        }
+
+        private async Task<List<string>> ExtractPhoneNumbers(IFormFile file)
+        {
+            var phoneNumbers = new List<string>();
+
+            using (var stream = new MemoryStream())
+            {
+                await file.CopyToAsync(stream);
+                using (var workbook = new XLWorkbook(stream))
+                {
+                    var worksheet = workbook.Worksheet(1); // Read first sheet
+                    int columnNumber = 1; // Assuming phone numbers are in column A
+
+                    foreach (var row in worksheet.RowsUsed().Skip(1)) // Skip header row
+                    {
+                        var cell = row.Cell(columnNumber);
+
+                        if (!cell.IsEmpty())
+                        {
+                            string phoneNumber = cell.CachedValue.ToString().Trim() ?? "";
+
+                            // Ensure the value is a valid phone number
+                            if (long.TryParse(phoneNumber, out _)) // Check if it's numeric
+                            {
+                                phoneNumbers.Add(phoneNumber + "@c.us"); // Format for WhatsApp
+                            }
+                        }
+                    }
+                }
+            }
+
+            return phoneNumbers;
         }
 
         public async Task SaveToDb(RestResponse response, string contacts)

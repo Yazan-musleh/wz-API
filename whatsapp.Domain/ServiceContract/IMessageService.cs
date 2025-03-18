@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace whatsapp.Domain.ServiceContract
 {
     public interface IMessageService
     {
-        public Task<string> SendBulkMessages(List<string> contacts, string message);
-        public Task<string> SendBulkMediaMessages(List<string> contacts,string mediaUrl, string message);
+        public Task<string> SendBulkMessages(IFormFile contacts, string message);
+        public Task<string> SendBulkMediaMessages(IFormFile contacts,string mediaUrl, string message);
     }
 }

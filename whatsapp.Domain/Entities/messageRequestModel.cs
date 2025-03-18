@@ -1,8 +1,10 @@
-﻿namespace whatsapp.Domain.Entities
+﻿using Microsoft.AspNetCore.Http;
+
+namespace whatsapp.Domain.Entities
 {
     public class MessageRequestModel
     {
-        public List<string> Contacts { get; set; }
+        public IFormFile File { get; set; }
         public string Message { get; set; }
     }
 

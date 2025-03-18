@@ -18,9 +18,9 @@ namespace whatsapp_api.Controllers
         }
 
         [HttpPost("send")]
-        public async Task<IActionResult> SendBulkMessages([FromBody] MessageRequestModel request)
+        public async Task<IActionResult> SendBulkMessages(IFormFile file, string messageContent)
         {
-            var result = await _messageService.SendBulkMessages(request.Contacts, request.Message);
+            var result = await _messageService.SendBulkMessages(file, messageContent);
             return Ok(result);
         }
 
@@ -28,7 +28,7 @@ namespace whatsapp_api.Controllers
         public async Task<IActionResult> SendImage([FromBody] MediaMessageRequestModel request)
         {
             var result = await 
-                _messageService.SendBulkMediaMessages(request.Contacts, request.mediaUrl, request.Message);
+                _messageService.SendBulkMediaMessages(request.File, request.mediaUrl, request.Message);
 
             return Ok(result);
         }

@@ -78,30 +78,33 @@ namespace whatsapp.Application.Services
 
             var contacts = await ExtractPhoneNumbers(file);
 
+
+            var options = new RestClientOptions("https://waapi.app/api/v1/instances/41849/client/action/add-group-participant");
+            var client = new RestClient(options);
+
+            int i = 0;
+
             var tasks = contacts.Select(async contact =>
             {
-
-                var options = new RestClientOptions("https://waapi.app/api/v1/instances/41849/client/action/add-group-participant");
-                var client = new RestClient(options);
                 var request = new RestRequest("");
                 request.AddHeader("accept", "application/json");
                 request.AddHeader("authorization", "Bearer 5bXTf9sHQCO2TBfIlZWfI6T8T8UlHFNsOKa7CjuIf14b7574");
+
                 var requestBody = new
                 {
-                    participant = contact, // Using the list dynamically
+                    participant = contact,
                     chatId = groupId
                 };
-                Console.WriteLine("contact: " + contacts);
                 request.AddJsonBody(requestBody);
                 var response = await client.PostAsync(request);
-
                 responses.Add(response.Content);
-
-                Console.WriteLine("{0}", response.Content);
+                Console.WriteLine("{0}"+i, response.Content);
+                i++;
             });
 
             await Task.WhenAll(tasks);
-            
+
+
             foreach (var json in responses)
             {
                 var response = JsonConvert.DeserializeObject<AddMembersJsonResponse>(json);
@@ -109,7 +112,7 @@ namespace whatsapp.Application.Services
                 foreach (var entry in response.Data.Data.Result)
                 {
                     string phoneNumber = entry.Key.Replace("@c.us", "");
-                    int code = entry.Value.Code;
+                    int code = entry.Value.StatusCode;
                     string message = entry.Value.Message;
 
                     exportResponses.Add(new ExportAddMembersResultToExcelDto { PhoneNumber = phoneNumber, Message = message, Code = code });
@@ -120,6 +123,42 @@ namespace whatsapp.Application.Services
 
 
             return await ExportExcelSheet(exportResponses);
+        }
+
+
+        public async Task<MemoryStream> GetGroupMembers(string groupId)
+        {
+
+            List<ExportGetMembersResultToExcelDto> responses = new List<ExportGetMembersResultToExcelDto>();
+
+            var options = new RestClientOptions("https://waapi.app/api/v1/instances/41849/client/action/get-group-participants");
+            var client = new RestClient(options);
+            var request = new RestRequest("");
+            request.AddHeader("accept", "application/json");
+            request.AddHeader("authorization", "Bearer 5bXTf9sHQCO2TBfIlZWfI6T8T8UlHFNsOKa7CjuIf14b7574");
+            request.AddJsonBody("{\"chatId\":\""+groupId+"\"}", false);
+            var response = await client.PostAsync(request);
+
+            Console.WriteLine("{0}", response.Content);
+
+            var jsonDoc = JsonDocument.Parse(response.Content);
+            var participants = jsonDoc.RootElement
+                .GetProperty("data")
+                .GetProperty("data")
+                .GetProperty("participants");
+
+            foreach (var member in participants.EnumerateArray())
+            {
+                var phoneNumber = member.GetProperty("id").GetProperty("user").GetString();
+                var isAdmin = member.GetProperty("isAdmin").GetBoolean();
+
+                responses.Add(new ExportGetMembersResultToExcelDto { PhoneNumber = phoneNumber, IsAdmin = isAdmin });
+
+                Console.WriteLine("phoneNumber: " + phoneNumber + "isAdmin: " + isAdmin);
+            }
+
+            return await ExportExcelSheet(responses);
+
         }
 
         public async Task<MemoryStream> CreateGroup(string groupName, IFormFile file)
@@ -153,7 +192,7 @@ namespace whatsapp.Application.Services
                 foreach (var entry in response.Data.Data.Participants)
                 {
                     string phoneNumber = entry.Key.Replace("@c.us", "");
-                    int code = entry.Value.Code;
+                    int code = entry.Value.StatusCode;
                     string message = entry.Value.Message;
 
                     exportResponses.Add(new ExportAddMembersResultToExcelDto { PhoneNumber = phoneNumber, Message = message, Code = code });
@@ -182,6 +221,30 @@ namespace whatsapp.Application.Services
                 workSheet.Cell(i+2, 3).Value = dtos[i].Code;
 
                 Console.WriteLine("phone number: ", i, dtos[i].PhoneNumber);
+            }
+
+            workSheet.Columns().AdjustToContents();
+
+            using var stream = new MemoryStream();
+            workbook.SaveAs(stream);
+            stream.Position = 0;
+            return stream;
+        }
+        
+        private async Task<MemoryStream> ExportExcelSheet(List<ExportGetMembersResultToExcelDto> dtos)
+        {
+            using var workbook = new XLWorkbook();
+            var workSheet = workbook.Worksheets.Add("Members data");
+
+            workSheet.Cell(1, 1).Value = "Phone number";
+            workSheet.Cell(1, 2).Value = "isAdmin";
+
+            for (int i = 0; i < dtos.Count(); i++)
+            {
+                workSheet.Cell(i+2, 1).Value = dtos[i].PhoneNumber;
+                workSheet.Cell(i+2, 2).Value = dtos[i].IsAdmin;
+
+                Console.WriteLine("phone number: ", i, " ", dtos[i].PhoneNumber);
             }
 
             workSheet.Columns().AdjustToContents();
