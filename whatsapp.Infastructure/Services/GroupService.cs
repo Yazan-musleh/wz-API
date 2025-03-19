@@ -72,6 +72,8 @@ namespace whatsapp.Application.Services
         public async Task<MemoryStream> AddUsersToGroup(string groupId, IFormFile file)
         {
 
+            await Task.Delay(100);
+
             List<string> responses = new List<string> ();
             List<ExportAddMembersResultToExcelDto> exportResponses = new List<ExportAddMembersResultToExcelDto>();
 
@@ -112,7 +114,7 @@ namespace whatsapp.Application.Services
                 foreach (var entry in response.Data.Data.Result)
                 {
                     string phoneNumber = entry.Key.Replace("@c.us", "");
-                    int code = entry.Value.StatusCode;
+                    int code = entry.Value.Code;
                     string message = entry.Value.Message;
 
                     exportResponses.Add(new ExportAddMembersResultToExcelDto { PhoneNumber = phoneNumber, Message = message, Code = code });
@@ -192,7 +194,7 @@ namespace whatsapp.Application.Services
                 foreach (var entry in response.Data.Data.Participants)
                 {
                     string phoneNumber = entry.Key.Replace("@c.us", "");
-                    int code = entry.Value.StatusCode;
+                    int code = entry.Value.Code;
                     string message = entry.Value.Message;
 
                     exportResponses.Add(new ExportAddMembersResultToExcelDto { PhoneNumber = phoneNumber, Message = message, Code = code });

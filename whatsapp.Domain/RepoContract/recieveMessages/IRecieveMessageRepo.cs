@@ -1,15 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using whatsapp.Domain.Entities;
 
-namespace whatsapp.Domain.RepoContract.recieveMessages
+namespace whatsapp.Domain.RepoContract.sentMessages
 {
-    public interface IRecieveMessageRepo
+    public interface ISentMessageRepo
     {
         public  Message SaveMessage(Message message);
         public void SaveTextMessage(TextMessage message);

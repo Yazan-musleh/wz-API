@@ -10,6 +10,7 @@ namespace whatsapp.Domain.ServiceContract
     {
         public Task<string> Logout();
         public Task<string> GetQRCode();
+        public Task<string> GetPairCode(string phoneNumber);
         public Task<string> GetStatus();
         public Task<string> RetrieveUserData();
     }

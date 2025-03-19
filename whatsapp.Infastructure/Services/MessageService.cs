@@ -1,10 +1,8 @@
-﻿using Azure;
-using ClosedXML.Excel;
+﻿using ClosedXML.Excel;
 using Microsoft.AspNetCore.Http;
 using RestSharp;
 using System.Text.Json;
 using whatsapp.Domain.Entities;
-using whatsapp.Domain.RepoContract.recieveMessages;
 using whatsapp.Domain.ServiceContract;
 using whatsapp.Infastructure.Database;
 
@@ -12,13 +10,6 @@ namespace whatsapp.Application.Services
 {
     public class MessageService : IMessageService
     {
-
-        private readonly IRecieveMessageRepo _repo;
-
-        public MessageService(IRecieveMessageRepo repo)
-        {
-            _repo = repo;
-        }
 
         public async Task<string> SendBulkMediaMessages(IFormFile contactsFile, string mediaUrl, string message)
         {

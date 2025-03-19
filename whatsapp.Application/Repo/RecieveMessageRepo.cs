@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using System.Data;
 using whatsapp.Domain.Entities;
-using whatsapp.Domain.RepoContract.recieveMessages;
+using whatsapp.Domain.RepoContract.sentMessages;
 using whatsapp.Infastructure.Database;
 
 namespace whatsapp.Application.Repo
 {
-    public class RecieveMessageRepo : IRecieveMessageRepo
+    public class SentMessageRepo : ISentMessageRepo
     {
         private readonly WhatsappApiContext _context;
 
-        public RecieveMessageRepo(WhatsappApiContext context)
+        public SentMessageRepo(WhatsappApiContext context)
         {
             _context = context;
         }

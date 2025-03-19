@@ -34,6 +34,29 @@ namespace whatsapp.Application.Services
             return response.Content;
         }
 
+        public async Task<string> GetPairCode(string phoneNumber)
+        {
+
+            var options = new RestClientOptions("https://waapi.app/api/v1/instances/41849/client/action/request-pairing-code");
+            var client = new RestClient(options);
+            var request = new RestRequest("");
+            request.AddHeader("accept", "application/json");
+            request.AddHeader("authorization", "Bearer 5bXTf9sHQCO2TBfIlZWfI6T8T8UlHFNsOKa7CjuIf14b7574");
+            request.AddJsonBody("{\"phoneNumber\":\""+phoneNumber+"\",\"showNotification\":true}", false);
+            var response = await client.PostAsync(request);
+
+            Console.WriteLine("{0}", response.Content);
+
+            using(JsonDocument doc = JsonDocument.Parse(response.Content))
+            {
+                JsonElement root = doc.RootElement;
+                var pairingCode = root.GetProperty("data").GetProperty("data").GetProperty("pairingCode").ToString();
+            
+                return pairingCode;
+            }
+
+        }
+
         public async Task<string> GetStatus()
         {
 
