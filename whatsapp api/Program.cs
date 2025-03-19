@@ -1,9 +1,7 @@
-using Microsoft.EntityFrameworkCore;
 using whatsapp.Application.Mapping;
 using whatsapp.Application.Repo;
 using whatsapp.Application.Services;
-using whatsapp.Domain.RepoContract;
-using whatsapp.Domain.RepoContract.recieveMessages;
+using whatsapp.Domain.RepoContract.sentMessages;
 using whatsapp.Domain.ServiceContract;
 using whatsapp.Infastructure.Database;
 using whatsapp.Infastructure.Services;
@@ -22,13 +20,10 @@ builder.Services.AddSignalR();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 
-builder.Services.AddScoped<IPhoneNumRepo, PhoneNumRepo>();
-builder.Services.AddScoped<IGetPhoneNumService, GetPhoneNumService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<IGroupService, GroupService>();
-builder.Services.AddScoped<IRecieveMessageService, RecievedMessageService>();
-builder.Services.AddScoped<IRecieveMessageRepo, RecieveMessageRepo>();
+builder.Services.AddScoped<ISentMessageRepo, SentMessageRepo>();
 
 builder.WebHost.UseUrls("http://0.0.0.0:7284");
 builder.Services.AddCors(options =>

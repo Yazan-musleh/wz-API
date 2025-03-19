@@ -25,6 +25,10 @@ public class AuthController : ControllerBase
         _hubContext = hubContext;
     }
 
+    public class PairCodeRequest
+    {
+        public string PhoneNumber { get; set; }
+    }
 
 
     [HttpPost]
@@ -146,6 +150,13 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> GetQRCode()
     {
         var result = await _authService.GetQRCode();
+        return Ok(result);
+    }
+
+    [HttpPost("pair_code")]
+    public async Task<IActionResult> GetPairCode([FromBody] PairCodeRequest request)
+    {
+        var result = await _authService.GetPairCode(request.PhoneNumber);
         return Ok(result);
     }
 
